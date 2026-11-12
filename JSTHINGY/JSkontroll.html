@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+    
+    <h2>del 9</h2>
+    <p>Sjekk konsoll</p>
+    <p id="rez9">Resultat kommer her</p>
+    <script>
+        const rez9 = document.querySelector("#rez9");
+        let teller9 = "";
+
+        for (let i = 10; i >= 1; i--) {
+            console.log(i);
+            rez9.innerHTML += i + "<br>";
+            teller9 += i;
+            if (i > 1) {
+                teller9 += ", ";
+            }
+        }
+
+        if (teller9.length > 2) {
+            teller9 = teller9.substring(0, teller9.length - 2);
+        }
+
+        rez9.innerHTML += "<br>Sortert: " + teller9;
+    </script>
+
+
+<h2>del 9,3 arrays</h2>
+<script>
+    console.log("del 9,3 arrays");
+    const tall9_3 = [0, 1, 1, 0];
+    console.log(tall9_3[0]);
+    console.log(tall9_3[1]);
+    console.log(tall9_3);
+    for (let i = 0; i < tall9_3.length; i++) {
+        console.log(tall9_3[i]);
+    }
+    let størst = tall9_3[0];
+    for (let i = 0; i < tall9_3.length; i++) {
+        if (tall9_3[i] > størst) {
+            størst = tall9_3[i];
+        }
+    }
+    console.log("Største verdi:", størst);
+
+
+</script>
+
+<h2>del 9,7</h2>
+
+<p>før sortering</p>
+<p id="før">8, 3, 12 ,1, 5</p>
+
+<p>etter sortering</p>
+<p id="etter"> </p>
+<script>
+    const tall9_7 = [8, 3, 12, 1, 5];
+    
+    for (let i = 0; i < tall9_7.length; i++) {
+        for (let j = 0; j < tall9_7.length; j++) {
+            if (tall9_7[i] < tall9_7[j]) {
+                let temp = tall9_7[i];
+                tall9_7[i] = tall9_7[j];
+                tall9_7[j] = temp;
+            }
+        }
+    }
+    console.log(tall9_7);
+    document.querySelector("#etter").textContent = tall9_7.join(", ");
+
+
+</script>
+
+</body>
+</html>

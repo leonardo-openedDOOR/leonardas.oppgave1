@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #b4a8a8;
+        }
+    </style>
+</head>
+<body>
+    <h1>funksjoner i javascript</h1>
+
+    <h2>den første funksjonen</h2>
+    <script>
+        function sihey() {
+            console.log("Sihey!");
+        }
+        sihey();
+    </script>
+    <p>se console</p>
+
+    <h2>kjør funksjon</h2>
+
+    <script>
+        for (let i = 1; i<3; i++) {
+
+        }
+        sihey();
+    </script>
+    <p>se console</p>
+
+    <h2>funksjon med parameter</h2>
+
+    <script>
+        function sihey(name) {
+            console.log("sihey" + name);
+        }
+        let name = "ola";
+        sihey(name);
+
+    </script>
+    <p>se console</p>
+
+
+    <h2>flere parametere</h2>
+
+    <script>
+        function presenter(name4, age4) {
+            console.log(" , " + name4 + " , " + age4 + " ,");
+        }
+        let name4 = "karen";
+        let age4 = 3;
+        presenter(name4, age4);
+    </script>
+    <p>se console</p>
+
+    <h2>returner tekst</h2>
+
+    <script>
+        function laghilsen5(name5) {
+            return "hei" + " " + name5 + "!";
+        }
+
+        let name5 = "karen";
+        let melding5 = laghilsen5(name5);
+        console.log(melding5);
+    </script>
+    <p>se console</p>
+
+    <h2>gjør teksten</h2>
+    <script>
+        function rop6(tekst6) {
+            return tekst6.toUpperCase();
+        }
+
+        let tekst6 = "hei";
+        let melding6 = rop6(tekst6);
+        console.log(melding6);
+    </script>
+
+    <p>se console</p>
+
+    <h2> gjør teksten  mindre</h2>
+
+    <script>
+        function hvisk7(tekst7) {
+            return tekst7.toLowerCase();
+        }
+
+        let tekst7 = "HEI";
+        let melding7 = hvisk7(tekst7);
+        console.log(melding7);
+    </script>
+
+    <p>se console</p>
+
+    <h2>tell antall tegn</h2>
+    <script>
+        function tell8(tekst8) {
+            return tekst8.length;
+        }
+
+        let tekst8 = "JavaScript";
+        let melding8 = tell8(tekst8);
+        console.log(melding8);
+        </script>
+
+        <p>se console</p>
+
+        <h2>finn første bokstav</h2>
+        <script>
+            function finnførstebokstav9(tekst9) {
+                return tekst9.charAt(0);
+            }
+
+            let tekst9 = "programmering";
+            let melding9 = finnførstebokstav9(tekst9);
+            console.log(melding9);
+        </script>
+        
+        <p>se console</p>
+
+        <h2>lag brukernavn</h2>
+        <script>
+            function lagbrukernavn10(fornavn10, etternavn10) {
+                return fornavn10.charAt(0) + etternavn10;
+            }
+            function hvisk10(tekst10) {
+                return tekst10.toLowerCase();
+            }
+
+            let fornavn10 = "OLA";
+            let etternavn10 = "Nordmann";
+            let brukernavn10 = lagbrukernavn10(fornavn10, etternavn10);
+            console.log(brukernavn10);
+        </script>
+
+        <p>se console</p>
+
+        <h2>template literals</h2>
+
+        <script>
+            function elevinfo11(fornavn11, klasse11) {
+                return ` ${fornavn11} går i klasse ${klasse11}.`;
+            }
+
+            let fornavn11 = "Lise";
+            let klasse11 = "10A";
+            let melding11 = elevinfo11(fornavn11, klasse11);
+            console.log(melding11);
+        </script>
+
+        <p>se console</p>
+
+        <h2>brukernavn = lipr</h2>
+
+        <script>
+            function lagbrukernavn12(fornavn12, etternavn12) {
+                return fornavn12.charAt(0) + etternavn12.charAt(0) + etternavn12.charAt(etternavn12.length - 3) + fornavn12.charAt(fornavn12.length - 2);
+                }
+
+                let fornavn12 = "Lise";
+                let etternavn12 = "Presley";
+                let brukernavn12 = lagbrukernavn12(fornavn12, etternavn12);
+                console.log(brukernavn12);
+
+        </script>
+        <p>se console</p>
+
+        <H2>funksjon koblet HTML</H2>
+        <input type="text" id="navninput">
+        <button onclick="siHei()">si hei</button>
+        <script>
+            function siHei() {
+                let navn = document.getElementById("navninput").value;
+                console.log("Hei, " + navn + "!");
+            }
+        </script>
+
+        <h2>kombiner flere funksjoner</h2>
+
+        <script>
+           function lagbrukernavn10(fornavn13, etternavn13) {
+                return fornavn13 + "." + etternavn13;
+            }
+            function hvisk13(tekst13) {
+                return tekst13.toLowerCase();
+            }
+            function touppper13(tekst13) {
+                return tekst13.toUpperCase();
+            }
+
+            let fornavn13 = "Ola";
+            let etternavn13 = "Nordmann";
+            let brukernavn13 = lagbrukernavn10(fornavn13, etternavn13);
+            let tekst13 = hvisk13(brukernavn13);
+            let tekst13Upper = touppper13(brukernavn13);
+            console.log(brukernavn13);
+            console.log(tekst13);
+            console.log(tekst13Upper);
+        </script>
+        <p>se console</p>
+
+
+       <h2>lag en tekstanalyster</h2>
+        <textarea id="tekstinput" rows="4" cols="50"></textarea>
+        <button onclick="analyserTekst14()">Analyser tekst</button>
+        <script>
+            function analyserTekst14() {
+                let tekst = document.getElementById("tekstinput").value;
+                let antalLtegn = tekst.length;
+                let antalOrd = tekst.split(" ").length;
+                console.log("antal14 tegn: " + antaLltegn);
+                console.log("antal14 tegn: " + antaLltegn);
+                console.log("antal14 ord: " + antalOrd);
+            }
+
+        </script>
+
+        <p>se console</p>
+
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript 1</title>
+
+    <style>
+
+        body { background: beige; padding: 20px; color: darkblue; }
+
+        h1, h2 { font-family: monospace; color: darkgreen; }
+
+    </style>
+
+</head>
+
+<body>
+
+ 
+
+    <h1>Oppgave 1</h1>
+
+    <script>
+
+        const navn = "leon";
+
+        console.log (navn);
+
+        navn = "leonardo"; // Feilmelding i console
+
+    </script>
+
+    <p>Se console -></p>
+
+ 
+
+    <h1>Oppgave 2</h1>
+
+    <script>
+
+        let resultat = 0;
+
+        console.log (resultat);
+
+        resultat++;
+
+        console.log (resultat);
+
+    </script>
+
+    <p>Se console -></p>
+
+   
+
+    <h1>Oppgave 3</h1>
+
+    <script>
+
+        //navn fra oppg 1
+
+        const alder = 18;
+
+        const elev = true;
+
+        let tom;
+
+        console.log(typeof(navn));
+
+        console.log(typeof(alder));
+
+        console.log(typeof(elev));
+
+        console.log(typeof(tom));
+
+    </script>
+
+    <p>Se console -></p>
+
+ 
+
+    <h1>Oppgave 4</h1>
+
+    <h2 id="melding">Ingen melding enda</h2>
+
+    <script>
+
+        const melding = document.querySelector("#melding");
+
+        console.log (melding.innerHTML);
+
+    </script>
+
+    <p>Se console -></p>
+
+ 
+
+    <h1>Oppgave 5</h1>
+
+    <script>
+
+        melding.textContent = "JavaScript was here."
+
+        console.log (melding.textContent);
+
+    </script>
+
+    <p>Se over og i console -></p>
+
+ 
+
+    <h1>Oppgave 6</h1>
+
+    <script>
+
+        function visMelding() {
+
+            console.log("Knappen ble trykket!");
+
+            melding.textContent = "Du trykket på knappen!";
+
+        }
+
+    </script>
+
+    <button onclick="visMelding()">Trykk på meg</button>
+
+    <p>Se console -></p>
+
+ 
+
+    <h1>Oppgave 7</h1>
+
+    <p>Se funksjon i oppgave 6 (melding.textContent)</p>
+
+
+    <h1>Oppgave 8</h1>
+    <script>
+        function siHei() {
+            const navnInput = document.querySelector("#tnavn");
+            const heimelding = document.querySelector("#outputnavn");
+            heimelding.textContent = "Hei, " + navnInput.value + "!";
+            
+            }
+        
+        
+        
+    </script>
+    <input type="text" id="tnavn">
+    <button onclick="siHei()">si hei</button>
+    <p id="outputnavn"></p>
+
+    <h1>Oppgave 9</h1>
+    <script>
+        function laghilsen(navn) {
+           let tekst = "Hei, " + navn + "!";
+           return tekst;
+        }
+        const oppgave9tekst = laghilsen("ola");
+        console.log(oppgave9tekst);
+
+    </script>
+
+<h1>Oppgave 10</h1>
+    <script>
+        function laghilsen(navn, alder) {
+            console.log("");
+           let tekst = "Hei, " + navn + "! Du er " + alder + " år gammel.";
+           return tekst;
+        }
+        const oppgave10tekst = laghilsen("ole", 25);
+        console.log(oppgave10tekst);
+
+    </script>
+
+    se console -☻
+
+    <h1>Oppgave 11</h1>
+    <style>
+        .boks {
+            background-color: lightblue;
+            border: 2px solid darkblue;
+            font-size: 20px;
+            color: darkblue;
+        }
+    </style>
+        <script>
+            function endreBakgrunn() {
+                const boks = document.querySelector(".boks");
+                boks.style.backgroundColor = "purple";
+                boks.style.fontSize = "24px";
+                boks.style.color = "white";
+                
+            }
+            
+
+    </script>
+    <div class="boks">
+        <p>Dette er en boks med tekst.</p>
+    </div>
+    <button onclick="endreBakgrunn()">Endre bakgrunnsfarge</button>
+
+
+    <h1>Oppgave 12</h1>
+    <script>
+        let antallKlikk = 0;
+        function tellKlikk() {
+            antallklikk++;
+            const taller = document.querySelector("#taller");
+            taller.textContent = "du har klikket: " + antallKlikk + " ganger";
+        }
+    </script>
+
+    <button onclick="tellKlikk()">Trykk på meg</button>
+    <p id="taller">du har klikket: 0 ganger</p>
+
+
+    <h1>Oppgave 13</h1>
+    <script>
+        const elever = [
+            {
+                navn: "leon",
+                alder: 18,
+                klasse: "2ita",
+
+                presenter() {
+                    return "Hei, jeg heter " + this.navn + ", jeg er " + this.alder + " år gammel og går i klasse " + this.klasse + ".";
+                }
+            }
+        ];
+        console.log(elever[0].navn);
+        console.log(elever[0].alder);
+        console.log(elever[0].klasse);
+        console.log(elever[0].presenter());
+    </script>
+
+
+</body>
+
+</html>
+
+

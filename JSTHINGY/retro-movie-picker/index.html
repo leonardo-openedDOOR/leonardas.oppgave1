@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Movie Picker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Retro Movie Picker</h1>
+    </header>
+    <main>
+
+    
+
+    <label id="genre-label" for="genre">Choose a genre:</label>
+    <select id="genre">
+        <option value="any genre">Any Genre</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <option value="horror">Horror</option>
+        <option value="sci-fi">Sci-Fi</option>  
+    </select>
+
+    <label id="mood-label" for="mood">Choose a mood:</label>
+    <select id="mood">
+        <option value="any mood">Any Mood</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="funny">Funny</option>
+        <option value="serious">Serious</option>
+        <option value="intense">Intense</option>
+    </select>
+    <label id="rating-label" for="rating">Choose a rating:</label>
+    <select id="rating">
+        <option value="any rating">Any Rating</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select>
+
+    </main>
+
+    <button id="pick-movie">Pick a Movie</button>
+
+    <div id="movie-result"></div>
+
+    
+<script src="script.js"></script>
+</body>
+</html>

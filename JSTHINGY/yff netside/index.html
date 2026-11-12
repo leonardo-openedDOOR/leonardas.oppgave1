@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min YFF Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>YFF Portfolio</h1>
+    <p>Min IT-praksis 2026–2027</p>
+
+    <nav>
+        <a href="#hjem">Hjem</a>
+        <a href="#praksislogg">Praksislogg</a>
+        <a href="#prosjekter">Prosjekter</a>
+        <a href="#kompetanse">Kompetansemål</a>
+        <a href="#ommeg">Om meg</a>
+    </nav>
+</header>
+
+<main>
+    <section id="hjem">
+        <h2>Velkommen til min praksisportfolio</h2>
+        <p>Her dokumenterer jeg mine erfaringer, arbeidsoppgaver og det jeg lærer i YFF.</p>
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>Timer registrert</h3>
+                <p id="totalTimer">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Loggføringer</h3>
+                <p id="totalLogger">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Prosjekter</h3>
+                <p id="totalProsjekter">0</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="praksislogg">
+        <h2>Min praksislogg</h2>
+        <p>Registrer arbeidsoppgavene dine her.</p>
+
+        <form id="loggForm">
+            <input type="hidden" id="redigerId">
+
+            <label for="dato">Dato</label>
+            <input type="date" id="dato" required>
+
+            <label for="oppgave">Arbeidsoppgave</label>
+            <input type="text" id="oppgave" placeholder="Hva jobbet du med?" required>
+
+            <label for="timer">Antall timer</label>
+            <input type="number" id="timer" min="0.5" step="0.5" required>
+
+            <label for="kategori">Kategori</label>
+            <select id="kategori">
+                <option>IT-drift</option>
+                <option>Brukerstøtte</option>
+                <option>Nettverk</option>
+                <option>Programmering</option>
+                <option>Annet</option>
+            </select>
+
+            <label for="beskrivelse">Hva gjorde du?</label>
+            <textarea id="beskrivelse" required></textarea>
+
+            <label for="laering">Hva lærte du?</label>
+            <textarea id="laering"></textarea>
+
+            <div class="form-buttons">
+                <button type="submit" id="lagreKnapp">Lagre logg</button>
+                <button type="button" id="avbrytKnapp" class="secondary" hidden>Avbryt</button>
+            </div>
+        </form>
+
+        <div class="section-heading">
+            <h3>Tidligere loggføringer</h3>
+            <button type="button" id="eksporterKnapp" class="secondary">Eksporter JSON</button>
+        </div>
+
+        <div id="loggListe"></div>
+    </section>
+
+    <section id="prosjekter">
+        <h2>Mine prosjekter</h2>
+        <p>Her skal jeg dokumentere større IT-prosjekter.</p>
+        <div class="empty-state">Ingen prosjekter registrert ennå.</div>
+    </section>
+
+    <section id="kompetanse">
+        <h2>Kompetansemål</h2>
+        <p>Her kobler jeg arbeidsoppgavene mine til relevante kompetansemål.</p>
+        <div class="empty-state">Kompetansemål legges til senere.</div>
+    </section>
+
+    <section id="ommeg">
+        <h2>Om meg</h2>
+        <p>Jeg er IT-elev og bruker denne nettsiden til å dokumentere min praksis i YFF.</p>
+    </section>
+</main>
+
+<footer>
+    <p>Min YFF Portfolio | 2026–2027</p>
+</footer>
+
+</body>
+</html>

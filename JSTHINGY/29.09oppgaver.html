@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript kontrollstrukturer og operatorer</title>
+    <style>
+        body, button, input, select {
+            background: rgb(26, 162, 164);
+            color: rgb(212, 25, 25);
+        }
+        input::placeholder, select { color: darkred; }
+        select { border: 2px outset black; }
+    </style>
+</head>
+<body>
+   
+    <h2>del 1</h2>
+    <script>
+        function sjekkAlder1() {
+            const inputFelt = document.querySelector("#alder1");
+            const resultat = document.querySelector("#resultat1");
+            const alder = inputFelt.value;
+            // console.log(alder);  // test for å se om det virker
+            if (alder >= 18) {
+                resultat.innerHTML = "Du er myndig";
+                console.log("Du er myndig");
+            }
+            if (alder < 18) {
+                resultat.innerHTML = "Du er ikke myndig";
+                console.log("Du er ikke myndig");
+            }
+        }
+    </script>
+    <input type="text" id="alder1" placeholder="Oppgi din alder.">&nbsp;<button id="sjekk1" onclick="sjekkAlder1()">Sjekk alder</button>
+    <p id="resultat1"></p>
+ 
+    <h2>del 2</h2>
+    <script>
+        function sjekkTemp2() {
+            const inputFelt = document.querySelector("#temp2");
+            if (inputFelt.value >= 15) {
+                console.log("Det er varmt ute");
+            }
+            else {
+                console.log("Det er kaldt ute");
+            }
+        }
+    </script>
+    <input type="text" id="temp2" placeholder="Hvor mange grader er det?">&nbsp;<button onclick="sjekkTemp2()">Sjekk</button>
+ 
+    <h2>del 3</h2>
+    <script>
+        function sjekkKarakter3() {
+            const poeng = document.querySelector("#poeng3").value;
+            if (poeng > 90) {
+                console.log("Du fikk karakteren A :-D");
+            }
+            else if (poeng > 80) {
+                console.log("Du fikk karakteren B :-)");
+            }
+            else if (poeng > 70) {
+                console.log("Du fikk karakteren C :-)");
+            }
+            else if (poeng > 60) {
+                console.log("Du fikk karakteren D :-|");
+            }
+            else {
+                console.log("Du fikk karakteren F, ikke bestått :-(");
+            }
+        }
+    </script>
+    <input type="text" id="poeng3" placeholder="Hvor mange poeng?">&nbsp;
+    <button onclick="sjekkKarakter3()">Sjekk</button>
+ 
+    <h2>del 4</h2>
+    <script>
+        const alder4 = 17;
+        const grense4 = 18;
+        const poeng4 = "100";
+        const maksPoeng4 = 100;
+ 
+        console.log("== " + (alder4 == grense4));
+        console.log("!= " + (alder4 != grense4));
+ 
+        console.log("> " + (alder4 > grense4));
+        console.log("< " + (alder4 < grense4));
+ 
+        console.log(">= " + (alder4 >= grense4));
+        console.log("<= " + (alder4 <= grense4));
+ 
+        console.log("== " + (poeng4 == maksPoeng4));
+        console.log("=== " + (poeng4 === maksPoeng4));
+ 
+        if (alder4 = grense4) { // BLIR FEIL !! (alltid "true")
+ 
+        }
+    </script>
+    <p>se console</p>
+ 
+    <h2>del 5</h2>
+    <script>
+        function sjekkBillett5() {
+            const alder = document.querySelector("#alder5").value;
+            const billett = document.querySelector("#billett5").checked;
+            // console.log (alder + " og " + billett);  // tester
+ 
+            if (alder >= 16 && billett == true) {
+                console.log ("Du slipper inn");
+            }
+            else {
+                console.log ("Go home");
+            }
+        }
+    </script>
+    <input type="text" placeholder="Hva er din alder" id="alder5" /><br />
+    <input type="checkbox" id="billett5" />Har du billett (check)?<br ()>
+    <button onclick="sjekkBillett5()">Sjekk</button>
+ 
+    <h2>del 6</h2>
+    <script>
+        function sjekkTilgang6() {
+            const elev = document.querySelector("#elev6").checked;
+            const larer = document.querySelector("#larer6").checked;
+            const resultat = document.querySelector("#resultat6");
+ 
+            if (elev == true && larer == true) {
+                resultat.innerHTML = "Du har ikke tilgang :-|";
+            }
+            else if (elev == true || larer == true) {
+                resultat.innerHTML = "Du har tilgang :-)";
+            }
+            else {
+                resultat.innerHTML = "Du har ikke tilgang :-(";
+            }
+        }
+    </script>
+    <input type="checkbox" id="elev6"> Jeg er elev.<br />
+    <input type="checkbox" id="larer6"> Jeg er lærer.<br />
+    <button onclick="sjekkTilgang6()">Sjekk tilgang</button>
+    <p id="resultat6"></p>
+ 
+    <h2>del 7</h2>
+    Hvilken dag er det?<br />
+    <script>
+        function sjekkDag7() {
+            const dag = document.querySelector("#ukeDag7").value;
+            const resultat = document.querySelector("#resultat7");
+            switch (dag) {
+                case "0":
+                    resultat.innerHTML = "Huff, mandag :-|";
+                    break;
+                case "1":
+                    resultat.innerHTML = "Det er tirsdag";
+                    break;
+                case "2":
+                    resultat.innerHTML = "Onsdag kalles også lillelørdag";
+                    break;
+                case "3":
+                    resultat.innerHTML = "Bare et par dager til helg";
+                    break;
+                case "4":
+                    resultat.innerHTML = "Endelig fredag";
+                    break;
+            }
+        }
+    </script>
+    <select name="ukeDag7" id="ukeDag7" onchange="sjekkDag7()">
+        <option value="0">Mandag</option>
+        <option value="1">Tirsdag</option>
+        <option value="2">Onsdag</option>
+        <option value="3">Torsdag</option>
+        <option value="4">Fredag</option>
+    </select>
+    <p id="resultat7" style="border: 0px solid olive; padding: 3px;"></p>
+ 
+    <h2>del 7 - litt mer avansert (array er tema i punkt 9)</h2>
+    Hvilken dag er det?<br />
+    <script>
+        function sjekkDag72() {
+            const dag = document.querySelector("#ukeDag72").value;
+            const resultat = document.querySelector("#resultat72");
+            // resultat.innerHTML = dag; // testing
+            const ukedag = ["Huff, mandag :-)", "Det er tirsdag", "Onsdag, lillelørdag", "Torsdag, to dager til helg", "Endelig fredag"];
+            const ukedagfarge = ["red", "violet", "blue", "yellow", "green"];
+            // resultat.innerHTML = ukedag[dag]; // testing
+            switch (dag) {
+                case "0":
+                    resultat.innerHTML = ukedag[dag];
+                    resultat.style.border = "3px dotted " + ukedagfarge[dag];
+                    break;
+                case "1":
+                    resultat.innerHTML = ukedag[dag];
+                    resultat.style.border = "3px outset " + ukedagfarge[dag];
+                    break;
+                case "2":
+                    resultat.innerHTML = ukedag[dag];
+                    resultat.style.border = "3px solid " + ukedagfarge[dag];
+                    break;
+                case "3":
+                    resultat.innerHTML = ukedag[dag];
+                    resultat.style.border = "5px solid " + ukedagfarge[dag];
+                    resultat.style.padding = "10px 30px";
+                    break;
+                case "4":
+                    resultat.innerHTML = ukedag[dag];
+                    resultat.style.border = "5px solid " + ukedagfarge[dag];
+                    resultat.style.borderRadius = "10px"; // skrives ikke som i CSS-delen (border-radius)
+                    break;
+            }
+        }
+    </script>
+    <select name="ukeDag7" id="ukeDag72" onchange="sjekkDag72()">
+        <option value="0">Mandag</option>
+        <option value="1">Tirsdag</option>
+        <option value="2">Onsdag</option>
+        <option value="3">Torsdag</option>
+        <option value="4">Fredag</option>
+    </select>
+    <p id="resultat72" style="border: 0px solid olive; padding: 3px; border-radius: 0px;"></p>
+ 
+    <h2>del 8</h2>
+    <script>
+        for (let i = 0; i <= 10; i++) {
+            console.log (i);
+        }
+    </script>
+    <p>Sjekk konsoll</p>
+ 
+</body>
+</html>
